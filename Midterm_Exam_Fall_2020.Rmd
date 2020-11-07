@@ -94,13 +94,13 @@ df_all <- data.frame(hats, gender, exercise)
 
 # Plotting the data
 ggplot(df_all, aes(gender, hats)) +
-    geom_point(size = 4.25) +
-    geom_jitter(size = 4.25, width = 0.3, height = 0.3) +
+    geom_point(size = 3) +
+    geom_jitter(size = 3, width = 0.3, height = 0.3) +
     labs(title = "Gender vs. Number of Hats", y = "Number of Hats", x = "Gender")
 
 ggplot(df_all, aes(exercise, hats)) +
-    geom_point(size = 4.25) +
-    geom_jitter(size = 4.25, width = 0.3, height = 0.2) +
+    geom_point(size = 3) +
+    geom_jitter(size = 3, width = 0.3, height = 0.2) +
     labs(title = "Exercise vs. Number of Hats", y = "Number of Hats", x = "Level of Exercise")
 ```
 
@@ -154,8 +154,8 @@ fit_gender <- lm(hats ~ gender, data = df_all)
 
 # Plotted data w/ regression line & jitter
 ggplot(df_all, aes(gender, hats)) +
-    geom_point(size = 4.25) +
-    geom_jitter(size = 4.25, width = 0.3, height = 0.3) +
+    geom_point(size = 3) +
+    geom_jitter(size = 3, width = 0.3, height = 0.3) +
     geom_line(data = fortify(fit_gender), aes(x = gender, y = .fitted), size = 1, color = "blue") +
     labs(title = "Gender vs. Number of Hats", y = "Number of Hats", x = "Gender")
 
@@ -165,8 +165,8 @@ fit_exercise <- lm(hats ~ exercise, data = df_all)
 
 # Plotted data w/ regression line & jitter
 ggplot(df_all, aes(exercise, hats)) +
-    geom_point(size = 4.25) +
-    geom_jitter(size = 4.25, width = 0.3, height = 0.2) +
+    geom_point(size = 3) +
+    geom_jitter(size = 3, width = 0.3, height = 0.2) +
     geom_line(data = fortify(fit_exercise), aes(x = exercise, y = .fitted), size = 1, color = "green") +
     labs(title = "Exercise vs. Number of Hats", y = "Number of Hats", x = "Level of Exercise")
 
